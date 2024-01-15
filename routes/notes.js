@@ -28,8 +28,8 @@ router.post('/', (req, res)=>{
     })
 });
 
-router.delete('/', (req, res)=>{
-    res.send('Delete Request has been called')
+router.delete('/:id', (req, res)=>{
+    res.sendFile(path.join(__dirname, '../db/db.json'))
 })
 
 module.exports = router;
