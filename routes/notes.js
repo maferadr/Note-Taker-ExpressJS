@@ -3,7 +3,7 @@ const fs = require('fs');
 const path = require('path')
 
 router.get('/', (req, res)=>{
-    res.json('Testing purposes')
+    res.sendFile(path.join(__dirname, '../db/db.json'))
 });
 
 //Fs library to read and response to send back a response => Add it on the db.json file
@@ -27,5 +27,9 @@ router.post('/', (req, res)=>{
         }
     })
 });
+
+router.delete('/', (req, res)=>{
+    res.send('Delete Request has been called')
+})
 
 module.exports = router;
